@@ -3,6 +3,9 @@ springdoc:
     path: /openapi
 server:
   port: 3000
+  shutdown: graceful
+  http2:
+    enabled: true
 
 spring:
   spring:
