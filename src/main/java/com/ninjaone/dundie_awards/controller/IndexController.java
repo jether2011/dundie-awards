@@ -4,28 +4,30 @@ import com.ninjaone.dundie_awards.AwardsCache;
 import com.ninjaone.dundie_awards.MessageBroker;
 import com.ninjaone.dundie_awards.repository.ActivityRepository;
 import com.ninjaone.dundie_awards.repository.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 @Controller
 @RequestMapping("/")
 public class IndexController {
+    private final EmployeeRepository employeeRepository;
+    private final ActivityRepository activityRepository;
+    private final MessageBroker messageBroker;
+    private final AwardsCache awardsCache;
 
-    @Autowired
-    private EmployeeRepository employeeRepository;
-
-    @Autowired
-    private ActivityRepository activityRepository;
-
-    @Autowired
-    private MessageBroker messageBroker;
-
-    @Autowired
-    private AwardsCache awardsCache;
+    public IndexController(
+            EmployeeRepository employeeRepository,
+            ActivityRepository activityRepository,
+            MessageBroker messageBroker,
+            AwardsCache awardsCache
+    ) {
+        this.employeeRepository = employeeRepository;
+        this.activityRepository = activityRepository;
+        this.messageBroker = messageBroker;
+        this.awardsCache = awardsCache;
+    }
 
     @GetMapping()
     public String getIndex(Model model) {
