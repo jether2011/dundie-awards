@@ -72,4 +72,12 @@ public class Employee {
     public Integer getDundieAwards(){
         return dundieAwards;
     }
+
+    public String getOrganizationName() {
+        return organization.getName();
+    }
+
+    public Long getOrganizationId() {
+        return organization.getId();
+    }
 }
