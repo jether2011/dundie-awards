@@ -22,7 +22,7 @@ The Dundie Awards project is a Spring Boot application designed to manage employ
    - Clear model classes with proper JPA annotations
    - RESTful controller design
    - Repository interfaces following Spring Data JPA patterns
-   - Separate data loading mechanism (DataLoader.java)
+   - Separate data loading mechanism (DataLoader.java) `(It's recommended to use migration instead of this one)`
 
 ### Areas for Improvement
 
